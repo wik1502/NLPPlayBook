@@ -1,0 +1,6 @@
+---
+- hosts: all
+  become: true
+  tasks:
+  - name: Install vim
+    yum: name=vim-enhanced state=latest
