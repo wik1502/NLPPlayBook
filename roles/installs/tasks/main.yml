@@ -1,0 +1,9 @@
+---
+  - name: Install vim
+    yum: name=vim-enhanced state=latest
+
+  - name: Install git
+    become: true
+    yum:
+      name: git
+      state: latest

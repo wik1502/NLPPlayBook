@@ -1,0 +1,16 @@
+- name: ディレクトリがなければ作成
+  become: yes
+  tags:
+    - test
+  file:
+    path=/repos/nlpdev
+    state=directory
+    owner=root
+    group=root
+
+- name: git_clone
+  become: true
+  git:
+    repo: "https://github.com/wik1502/NLPDEV.git"
+    dest: /repos/nlpdev
+    version: master
