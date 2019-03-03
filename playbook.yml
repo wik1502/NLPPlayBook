@@ -4,3 +4,4 @@
   roles:
     - installs
     - gitrepo
+    - python

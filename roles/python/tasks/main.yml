@@ -1,0 +1,27 @@
+---
+  - name: make new repositories
+    yum: name=https://centos7.iuscommunity.org/ius-release.rpm state=latest
+
+  - name: Install python36u
+    yum: name=python36u state=latest
+
+  - name: Install python36u-pip
+    yum: name=python36u-pip state=latest
+
+  - name: Install python36u-devel
+    yum: name=python36u-devel state=latest
+
+  - name: upgrade pip
+    shell: pip3.6 install --upgrade pip
+    register: result
+    changed_when: '"Requirement already up-to-date" not in result.stdout'
+
+  - yum: name=http://packages.groonga.org/centos/groonga-release-1.1.0-1.noarch.rpm
+
+  - yum: name=mecab state=latest
+  - yum: name=mecab-ipadic state=latest
+  - yum: name=mecab-devel state=latest
+  - yum: name=swig state=latest
+  - yum: name=gcc-c++ state=latest
+  - shell: pip3.6 install mecab-python3
+  

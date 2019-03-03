@@ -1,4 +1,4 @@
-- name: �f�B���N�g�����Ȃ���΍쐬
+- name: ディレクトリがなければ作成
   become: yes
   tags:
     - test
